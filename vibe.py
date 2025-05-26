@@ -25,6 +25,7 @@ stopwords = set(
 
 # Class labels 1-6
 CLASS_LABELS = ['sadness','joy','love','anger','fear','surprise']
+CLASS_EMOJIS = ['(,>﹏<,)', '(˶ᵔ ᵕ ᵔ˶)','(=♡.♡=)','(｡•̀ ᴖ •́ )','(ó﹏ò｡)','(⊙ _ ⊙)']
 
 # Constants.
 CLASS_NUMBER = 6
@@ -120,8 +121,9 @@ class Classifier:
         if string is None:
             print("Error: missing string.")
 
+        c = self.classify(string)
         print(f"Post: \"{string}\"")
-        print(f"Vibe: {self.classify(string)}")
+        print(f"Vibe: {CLASS_EMOJIS[c]} | {CLASS_LABELS[c]}")
 
     def fold(self, samples, idx=0, test=False):
         # If testing, use k folds.
@@ -228,14 +230,14 @@ class Classifier:
                 class_num = int(u[1])
                 
                 # Classify.
-                e = self.classify(features, test=test)
+                e = self.classify(features)
                 if class_num == e:
                     right += 1
 
             # Add the accuracy.
             self.acc += right / len(test_data)
 
-    def classify(self, s, test=False):
+    def classify(self, s):
         # Remove punctuation.
         str = re.sub(r'[^\w\s]', '', s)
 
@@ -269,10 +271,7 @@ class Classifier:
                 mx = lp
                 class_num = c
 
-        if test:
-            return class_num
-        else:
-            return CLASS_LABELS[ class_num ]
+        return class_num
 
 """
 Main
