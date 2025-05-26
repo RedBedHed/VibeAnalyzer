@@ -8,7 +8,7 @@ import pickle
 stopwords = set(
     ['this', 'dont', 'yours', 'his', 'can', 'weren', 'themselves', 'hasnt', 'do', 'at', 'during', 
      'their', 'them', 'mightnt', 'were', 'wouldn', 'haven', 'has', 'couldn', 'myself', 'that', 
-     'wasn', 'neednt', "you're", 'while', 'it', 'nor', 'm', 'doesnt', 'just', 'himself', 'with', 
+     'wasn', 'neednt', "youre", 'while', 'it', 'nor', 'm', 'doesnt', 'just', 'himself', 'with', 
      'youd', 'until', 'a', 'does', 'where', 'shes', 've', 'arent', 'ours', 'under', 'ourselves', 
      'are', 'you', 'be', 'once', 'aren', 'having', 'on', 'to', 'below', 'not', 'such', 'itself', 
      'but', 're', 'of', 'yourselves', 'then', 'ain', 'thatll', 'isnt', 'being', 'same', 'through', 
@@ -53,7 +53,7 @@ References:
 class Classifier:
 
     def __init__(self, string=None, test=False):
-        self.train('emotions_copy.csv', string, test)
+        self.train('emotions.csv', string, test)
 
     def train(self, csv, string, test):
         samples = None
