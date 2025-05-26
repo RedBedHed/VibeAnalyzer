@@ -79,7 +79,7 @@ class Classifier:
             # K-fold cross validation.
             self.acc = 0
             for k in range(K):
-                self.fold(samples.copy(), idx=k, test=True)
+                self.fold(samples, idx=k, test=True)
                 print(f"Fold {k + 1}/{K} complete.")
 
             print(f"Model Accuracy: {(self.acc / K)*100}%")
@@ -228,7 +228,7 @@ class Classifier:
                 class_num = int(u[1])
                 
                 # Classify.
-                e = self.classify(sample, test=test)
+                e = self.classify(features, test=test)
                 if class_num == e:
                     right += 1
 
@@ -251,7 +251,7 @@ class Classifier:
         for c in range(CLASS_NUMBER):
             lp = self.log_prior[c]
 
-            seen = {}
+            seen = set()
             for w in str:                
 
                 if w in stopwords:
@@ -260,7 +260,7 @@ class Classifier:
                 if w in seen:
                     continue
                 
-                seen[w] = 1
+                seen.add(w)
 
                 if w in self.setV:
                     lp += self.log_likelihood[c][w]
