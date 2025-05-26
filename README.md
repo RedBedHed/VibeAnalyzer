@@ -1,2 +1,26 @@
 # VibeAnalyzer
-A simple machine learning model for analyzing the emotionality of text.
+##### *A simple machine learning model for analyzing the emotionality of text.*
+
+```
+usage: vibe.py [-h] [-t T] [-s S]
+
+options:
+  -h, --help  show this help message and exit
+  -t T        Test Mode: Performs k-fold cross validation and assesses model accuracy. Input any value.
+  -s S        String: A string to analyze for emotionality. Input a string.
+```
+
+## Credit
+
+Vibe.py Implementation:
+    Author: Ellie Moore
+
+Training Data Used:
+    https://www.kaggle.com/datasets/bhavikjikadara/emotions-dataset
+    Author: Bhavik Jikadara
+    License: https://creativecommons.org/licenses/by/4.0/
+    Changes Made: None
+
+References:
+    https://web.stanford.edu/~jurafsky/slp3/4.pdf
+    Authors: Daniel Jurafsky & James H. Martin
