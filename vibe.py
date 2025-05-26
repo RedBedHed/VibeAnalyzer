@@ -68,15 +68,18 @@ class Classifier:
                     # Split into samples.
                     samples = samples.split('\\r\\n')
                     samples = np.asarray(samples[1:-1])
+
+                    # Shuffle samples.
+                    np.random.shuffle(samples)
+                    samples = samples.tolist()
             except:
                 print("Error: missing dataset file.")
                 return
 
-            # I *think* this is k-fold cross validation.
-            # I'm certainly no expert.
+            # K-fold cross validation.
             self.acc = 0
             for k in range(K):
-                self.fold(samples, test=True)
+                self.fold(samples.copy(), idx=k, test=True)
                 print(f"Fold {k + 1}/{K} complete.")
 
             print(f"Model Accuracy: {(self.acc / K)*100}%")
@@ -100,7 +103,7 @@ class Classifier:
 
                     # Split into samples.
                     samples = samples.split('\\r\\n')
-                    samples = np.asarray(samples[1:-1])
+                    samples = samples[1:-1]
             except:
                 print("Error: missing dataset file.")
                 return
@@ -120,11 +123,19 @@ class Classifier:
         print(f"Post: \"{string}\"")
         print(f"Vibe: {self.classify(string)}")
 
-    def fold(self, samples, test=False):
-
-        # Shuffle samples.
-        np.random.shuffle(samples)
-        samples = samples.tolist()
+    def fold(self, samples, idx=0, test=False):
+        # If testing, use k folds.
+        # Separate into training and validation sets.
+        if test:
+            fold_size = len(samples) // K + 1
+            start = fold_size * idx
+            end = start + fold_size
+            if end > len(samples):
+                end = len(samples)
+            test_data = samples[start:end]
+            samp_data = samples[:start]
+            samp_data.extend(samples[end:])
+            samples = samp_data
 
         # Bags for each class.
         bag = [{} for _ in range(CLASS_NUMBER)]
@@ -138,10 +149,6 @@ class Classifier:
         # Model vocabulary from training data.
         vocabulary = []
 
-        # If testing, initialize a list to hold test data.
-        if test:
-            test_data = []
-
         # Number of samples.
         sample_count = len(samples)
 
@@ -152,13 +159,6 @@ class Classifier:
             u = sample.split(',')
             features = u[0]
             class_num = int(u[1])
-            
-            # If testing, set aside 1 sample for every SPLIT.
-            if test and i % SPLIT == 0:
-                i += 1
-                sample_count -= 1
-                test_data.append((features, class_num))
-                continue
 
             # Increment the sample count for 
             # this class.
@@ -221,9 +221,15 @@ class Classifier:
         if test:
             # How many do we get right?
             right = 0
-            for samples, c in test_data:
-                e = self.classify(samples, test=test)
-                if c == e:
+            for sample in test_data:
+                # Split sample into features and class.
+                u = sample.split(',')
+                features = u[0]
+                class_num = int(u[1])
+                
+                # Classify.
+                e = self.classify(sample, test=test)
+                if class_num == e:
                     right += 1
 
             # Add the accuracy.
