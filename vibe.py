@@ -206,12 +206,12 @@ class Classifier:
         sig = [0 for _ in range(CLASS_NUMBER)]
         for c in range(CLASS_NUMBER):
             for w in vocabulary:
-                cnt = w in bag[c] and bag[c][w]
+                cnt = bag[c][w] if w in bag[c] else 0
                 sig[c] += cnt + 1
 
         for c in range(CLASS_NUMBER):
             for w in vocabulary:
-                cnt = w in bag[c] and bag[c][w]
+                cnt = bag[c][w] if w in bag[c] else 0
                 self.log_likelihood[c][w] = np.log((cnt + 1)/sig[c])
 
         # Convert the vocabulary list to a set.
