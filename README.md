@@ -1,5 +1,5 @@
 # VibeAnalyzer
-##### *A simple machine learning model for analyzing the emotionality of text.*
+##### *A simple machine learning model for analyzing the emotionality of text with ~87% accuracy.*
 
 ```
 usage: vibe.py [-h] [-t T] [-s S]
