@@ -5,6 +5,7 @@
 ```
 Post: "Within, walls continued upright, bricks met neatly, floors were firm, and doors were sensibly shut;
 silence lay steadily against the wood and stone of Hill House, and whatever walked there, walked alone"
+
 Vibe: (ó﹏ò｡) | fear
 ```
 
@@ -27,6 +28,7 @@ Buckland; and already they were singing again as they went. But Sam turned to By
 Hill, as day was ending once more. And he went on, and there was yellow light, and fire within; and the evening
 meal was ready, and he was expected. And Rose drew him in, and set him in his chair, and put little Elanor upon
 his lap. He drew a deep breath. ‘Well, I’m back,’ he said."
+
 Vibe: (=♡.♡=) | love
 ```
 
