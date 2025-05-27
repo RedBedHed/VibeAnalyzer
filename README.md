@@ -51,6 +51,14 @@ But there are much worse games to play."
 Vibe: (,>﹏<,) | sadness
 ```
 
+#### 86 Eighty-Six
+```
+Post: "And you, you’re the same. You fought to the end. You survived. That’s why you’re here now. I think
+that’s something you should be more proud of."
+
+Vibe: (˶ᵔ ᵕ ᵔ˶) | joy
+```
+
 ## Usage
 ```
 usage: vibe.py [-h] [-t T] [-s S]
