@@ -32,7 +32,7 @@ his lap. He drew a deep breath. ‘Well, I’m back,’ he said."
 Vibe: (=♡.♡=) | love
 ```
 
-### Sunrise on the Reaping
+#### Sunrise on the Reaping
 ```
 Post: "Like all the Covey, music in her blood. But not like them, too. Less interested in pretty melodies,
 more in dangerous words. The kind that lead to rebel acts. The kind that got her arrested twice."
@@ -40,7 +40,7 @@ more in dangerous words. The kind that lead to rebel acts. The kind that got her
 Vibe: (｡•̀ ᴖ •́ ) | anger
 ```
 
-# Mockingjay
+#### Mockingjay
 ```
 Post: "But one day I’ll have to explain about my nightmares. Why they came. Why they won’t ever really go away.
 I’ll tell them how I survive it. I’ll tell them that on bad mornings, it feels impossible to take pleasure in
