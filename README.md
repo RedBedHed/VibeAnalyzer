@@ -40,6 +40,17 @@ more in dangerous words. The kind that lead to rebel acts. The kind that got her
 Vibe: (｡•̀ ᴖ •́ ) | anger
 ```
 
+# Mockingjay
+```
+Post: "But one day I’ll have to explain about my nightmares. Why they came. Why they won’t ever really go away.
+I’ll tell them how I survive it. I’ll tell them that on bad mornings, it feels impossible to take pleasure in
+anything because I’m afraid it could be taken away. That’s when I make a list in my head of every act of
+goodness I’ve seen someone do. It’s like a game. Repetitive. Even a little tedious after more than twenty years.
+But there are much worse games to play."
+
+Vibe: (,>﹏<,) | sadness
+```
+
 ## Usage
 ```
 usage: vibe.py [-h] [-t T] [-s S]
