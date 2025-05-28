@@ -1,6 +1,11 @@
 # VibeChecker
 ##### *A simple machine learning model for analyzing the emotionality of text with ~87% accuracy.*
 
+## Emotional Categories
+sadness, joy, love, anger, fear, surprise
+
+## Examples
+
 #### The Haunting of Hill House
 ```
 Post: "Within, walls continued upright, bricks met neatly, floors were firm, and doors were sensibly shut;
